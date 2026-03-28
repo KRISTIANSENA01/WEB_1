@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginSubmit = document.getElementById("login-submit");
   const logoutBtn = document.getElementById("logout-dashboard");
   const fontButtons = document.querySelectorAll("[data-font-control]");
+  const sidebarLinks = dashboardPage?.querySelectorAll(".dashboard-sidebar a");
+  const dashboardPanels = dashboardPage?.querySelectorAll(".dashboard-content");
 
   const showView = (view) => {
     [loginPanel, registerPanel].forEach((panel) => {
@@ -46,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loginSubmit?.addEventListener("click", () => {
     showDashboardPage();
+    setDashboardView("inicio");
   });
 
   logoutBtn?.addEventListener("click", () => {
@@ -54,10 +57,24 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document
-    .querySelectorAll("[data-view]")
-    .forEach((button) =>
-      button.addEventListener("click", () => showView(`${button.dataset.view}-panel`))
-    );
+    .querySelectorAll("[data-auth-view]")
+    .forEach((button) => button.addEventListener("click", () => showView(button.dataset.authView)));
+
+  const setDashboardView = (view) => {
+    dashboardPanels?.forEach((panel) => {
+      panel.classList.toggle("active", panel.dataset.view === view);
+    });
+    sidebarLinks?.forEach((link) => {
+      link.classList.toggle("active", link.dataset.view === view);
+    });
+  };
+
+  sidebarLinks?.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      setDashboardView(link.dataset.view);
+    });
+  });
 
   const FONT_STEP = 0.1;
   const MIN_SCALE = 0.8;

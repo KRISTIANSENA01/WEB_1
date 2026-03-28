@@ -352,6 +352,61 @@ button {
   border-radius: 10px;
 }
 
+.table-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.table-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-card th,
+.table-card td {
+  text-align: left;
+  padding: 0.65rem 0.4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+}
+
+.status-ok {
+  color: #128c4d;
+  font-weight: 600;
+}
+
+.status-low {
+  color: #c62828;
+  font-weight: 600;
+}
+
+.status-pending {
+  color: #ef5350;
+  font-weight: 600;
+}
+
+.dashboard-content {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dashboard-content.active {
+  display: flex;
+}
+
+.dashboard-sidebar a.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+}
+
 .auth-overlay {
   position: fixed;
   inset: 0;
