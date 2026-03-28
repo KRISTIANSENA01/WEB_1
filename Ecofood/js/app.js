@@ -121,7 +121,6 @@ const initApp = () => {
 };
 
 const loadApp = async () => {
-  await loadSection('#header-placeholder', 'pages/header.html');
   await Promise.all([
     loadSection('#login-panel-placeholder', 'pages/login-panel.html'),
     loadSection('#register-panel-placeholder', 'pages/register-panel.html'),
