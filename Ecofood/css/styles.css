@@ -573,6 +573,13 @@ body.dashboard-active .dashboard-page {
   display: flex;
 }
 
+body.overlay-active header,
+body.overlay-active main,
+body.overlay-active .dashboard-page,
+body.overlay-active .site-footer {
+  display: none;
+}
+
 @media (max-width: 640px) {
   .top-bar__inner {
     flex-direction: column;

@@ -19,11 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const showOverlay = (view) => {
     overlay.classList.add("active");
+    document.body.classList.add("overlay-active");
     showView(view);
   };
 
   const hideOverlay = () => {
     overlay.classList.remove("active");
+    document.body.classList.remove("overlay-active");
   };
 
   const showDashboardPage = () => {
