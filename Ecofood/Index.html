@@ -194,29 +194,59 @@
               <button type="button" data-view="login">Inicia sesión</button>
             </p>
           </article>
-          <article class="auth-panel dashboard-panel" id="dashboard-panel">
-            <div class="dashboard-header">
-              <div>
-                <p>Bienvenido, Admin</p>
-                <h3>Panel de administración</h3>
-              </div>
-              <button type="button" class="outline" id="logout-dashboard">Cerrar sesión</button>
-            </div>
-            <div class="dashboard-grid">
-              <article>
-                <strong>120</strong>
-                <span>Donantes registrados</span>
-              </article>
-              <article>
-                <strong>80</strong>
-                <span>Beneficiarios activos</span>
-              </article>
-              <article>
-                <strong>45</strong>
-                <span>Entregas del mes</span>
-              </article>
-            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-page" id="dashboard-page">
+      <aside class="dashboard-sidebar">
+        <div class="dashboard-avatar">
+          <div></div>
+          <p>Admin</p>
+        </div>
+        <nav>
+          <a href="#">Inicio</a>
+          <a href="#">Inventario</a>
+          <a href="#">Donantes</a>
+          <a href="#">Beneficiarios</a>
+          <a href="#">Roles</a>
+          <a href="#">Reportes</a>
+        </nav>
+      </aside>
+      <div class="dashboard-body">
+        <header class="dashboard-header">
+          <div>
+            <p>Bienvenido, Admin</p>
+            <h3>Panel de administración</h3>
+          </div>
+          <button type="button" class="solid" id="logout-dashboard">Cerrar sesión</button>
+        </header>
+        <div class="dashboard-grid">
+          <article>
+            <strong>120</strong>
+            <span>Donantes registrados</span>
           </article>
+          <article>
+            <strong>80</strong>
+            <span>Beneficiarios activos</span>
+          </article>
+          <article>
+            <strong>80</strong>
+            <span>Beneficiarios activos</span>
+          </article>
+          <article>
+            <strong>45</strong>
+            <span>Entregas del mes</span>
+          </article>
+        </div>
+        <div class="dashboard-chart">
+          <p>Donativos por mes</p>
+          <div class="chart-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     </section>

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.getElementById("auth-overlay");
   const loginPanel = document.getElementById("login-panel");
   const registerPanel = document.getElementById("register-panel");
-  const dashboardPanel = document.getElementById("dashboard-panel");
+  const dashboardPage = document.getElementById("dashboard-page");
   const loginBtn = document.querySelector(".nav-login");
   const backBtn = document.getElementById("back-home");
   const loginSubmit = document.getElementById("login-submit");
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const fontButtons = document.querySelectorAll("[data-font-control]");
 
   const showView = (view) => {
-    [loginPanel, registerPanel, dashboardPanel].forEach((panel) => {
+    [loginPanel, registerPanel].forEach((panel) => {
       panel.classList.toggle("active", panel.id === view);
     });
   };
@@ -24,6 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.classList.remove("active");
   };
 
+  const showDashboardPage = () => {
+    hideOverlay();
+    dashboardPage?.classList.add("active");
+    document.body.classList.add("dashboard-active");
+  };
+
+  const hideDashboard = () => {
+    dashboardPage?.classList.remove("active");
+    document.body.classList.remove("dashboard-active");
+  };
+
   loginBtn?.addEventListener("click", (event) => {
     event.preventDefault();
     showOverlay("login-panel");
@@ -34,12 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   loginSubmit?.addEventListener("click", () => {
-    showView("dashboard-panel");
+    showDashboardPage();
   });
 
   logoutBtn?.addEventListener("click", () => {
-    showView("login-panel");
-    hideOverlay();
+    hideDashboard();
+    showOverlay("login-panel");
   });
 
   document
