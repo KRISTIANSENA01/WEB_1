@@ -19,6 +19,7 @@ const initApp = () => {
   const logoutButton = document.getElementById('logout-dashboard');
   const sidebarLinks = document.querySelectorAll('.dashboard__sidebar a');
   const dashboardPanels = document.querySelectorAll('[data-dashboard-view]');
+  const fontControls = document.querySelectorAll('[data-font-control]');
 
   const showPanel = (panel) => {
     if (panel === 'register') {
@@ -66,6 +67,29 @@ const initApp = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const FONT_STEP = 0.1;
+  const MIN_SCALE = 0.8;
+  const MAX_SCALE = 1.3;
+  let fontScale = 1;
+
+  const setFontScale = (value) => {
+    fontScale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, value));
+    document.documentElement.style.setProperty('--font-scale', fontScale);
+  };
+
+  fontControls.forEach((button) => {
+    button.addEventListener('click', () => {
+      const action = button.dataset.fontControl;
+      if (action === 'increase') {
+        setFontScale(fontScale + FONT_STEP);
+      } else if (action === 'decrease') {
+        setFontScale(fontScale - FONT_STEP);
+      } else {
+        setFontScale(1);
+      }
+    });
+  });
+
   loginLink.addEventListener('click', (event) => {
     event.preventDefault();
     showLogin();
@@ -97,9 +121,12 @@ const initApp = () => {
 };
 
 const loadApp = async () => {
+  await loadSection('#header-placeholder', 'pages/header.html');
+  await loadSection('#login-placeholder', 'pages/login.html');
   await Promise.all([
-    loadSection('#header-placeholder', 'pages/header.html'),
-    loadSection('#login-placeholder', 'pages/login.html'),
+    loadSection('#login-panel-placeholder', 'pages/login-panel.html'),
+    loadSection('#register-panel-placeholder', 'pages/register-panel.html'),
+    loadSection('#dashboard-placeholder', 'pages/dashboard-panel.html'),
     loadSection('#home-content', 'pages/home.html'),
     loadSection('#footer-placeholder', 'pages/footer.html'),
   ]);

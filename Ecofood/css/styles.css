@@ -1,8 +1,10 @@
 ﻿:root {
+  --font-scale: 1;
   color-scheme: light;
   font-family: "Inter", system-ui, sans-serif;
   background-color: #f1f4ef;
   color: #0f1b12;
+  font-size: calc(16px * var(--font-scale));
 }
 
 * {
@@ -14,7 +16,7 @@
 body {
   min-height: 100vh;
   background: #f1f4ef;
-  padding-top: 90px;
+  padding-top: 5.5rem;
 }
 
 header.top-bar {
@@ -29,7 +31,7 @@ header.top-bar {
 }
 
 .top-bar__inner {
-  max-width: 1200px;
+  max-width: 72rem;
   margin: 0 auto;
   padding: 0.8rem 1.5rem;
   display: flex;
@@ -65,6 +67,21 @@ header.top-bar nav a {
   color: white;
   border-radius: 999px;
   padding: 0.4rem 1rem;
+}
+
+.text-controls {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.text-control {
+  background: #2c8c3e;
+  border: none;
+  color: white;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.95rem;
+  cursor: pointer;
 }
 
 button {
@@ -123,7 +140,7 @@ main {
 
 .login__cards {
   width: 100%;
-  max-width: 420px;
+  max-width: 26rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -267,7 +284,10 @@ body.login-active .login.dashboard-active .login__back {
 }
 
 .dashboard__sidebar a.active {
-  opacity: 0.85;
+  background: #2c8c3e;
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  font-weight: 700;
 }
 
 .dashboard__sidebar a:hover {
@@ -627,3 +647,4 @@ body.login-active .login.dashboard-active .login__back {
     padding: 1.8rem;
   }
 }
+
