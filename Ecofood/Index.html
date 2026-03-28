@@ -1,41 +1,47 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EcoFood | Reduce el desperdicio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-  <!-- Inicio header -->
-  <div id="header-placeholder"></div>
-  <!-- Fin header -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EcoFood | Reduce el desperdicio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="top-bar">
+      <div class="top-bar__inner">
+        <div class="logo">
+          <span class="leaf">♻️</span>
+          <span>EcoFood</span>
+        </div>
+        <nav>
+          <a href="#inicio">Inicio</a>
+          <a href="#como-funciona">¿Cómo funciona?</a>
+          <a href="#quienes">¿Quiénes somos?</a>
+          <a href="#impacto">Impacto</a>
+          <a href="#donar">Donar</a>
+          <a href="#login" class="nav-login">Ingresar</a>
+        </nav>
+        <div class="text-controls">
+          <button type="button" class="text-control" data-font-control="decrease">A-</button>
+          <button type="button" class="text-control" data-font-control="reset">A</button>
+          <button type="button" class="text-control" data-font-control="increase">A+</button>
+        </div>
+      </div>
+    </header>
 
-  <!-- Inicio main -->
-  <main>
-    <!-- Inicio login -->
-    <section class="login" id="login">
-      <button type="button" class="login__back" id="back-home">← Volver</button>
-      <div id="login-panel-placeholder"></div>
-      <div id="register-panel-placeholder"></div>
-      <div id="dashboard-placeholder"></div>
-    </section>
-    <!-- Fin login -->
-
-    <!-- Inicio home -->
-    <div class="main-content" id="home-content">
+    <main>
       <section class="hero" id="inicio">
         <div class="hero__copy">
           <p class="eyebrow">Conectamos acciones con impacto</p>
           <h1>Reduce el desperdicio, comparte esperanza</h1>
-          <p class="lead">
-            Conectamos alimentos, recursos y personas para generar impacto social.
+          <p>
+            Generamos impacto social conectando alimentos, personas y recursos con quienes más lo necesitan.
           </p>
           <div class="hero__actions">
             <button class="solid">Donar ahora</button>
@@ -53,64 +59,195 @@
       <section class="how" id="como-funciona">
         <div class="section-heading">
           <h2>¿Cómo funciona?</h2>
-          <p>Conectamos donantes, alimentos y beneficiarios en simples pasos</p>
+          <p>Donantes, beneficiarios y voluntarios se conectan en tres pasos simples.</p>
         </div>
         <div class="grid">
           <article class="card">
             <span class="icon">🧾</span>
             <h3>Registro</h3>
-            <p>
-              Crea tu cuenta como donante o beneficiario y accede a la plataforma segura.
-            </p>
+            <p>Crea tu perfil como donante, beneficiario o aliado comunitario en minutos.</p>
           </article>
           <article class="card">
             <span class="icon">🎁</span>
             <h3>Donación</h3>
-            <p>
-              Comparte alimentos disponibles o realiza aportes económicos para apoyar la causa.
-            </p>
+            <p>Comparte excedentes que de otra forma se perderían o realiza aportes económicos.</p>
           </article>
           <article class="card">
             <span class="icon">📦</span>
             <h3>Entrega</h3>
-            <p>
-              Los recursos se entregan mensualmente a comunidades según disponibilidad.
-            </p>
+            <p>Distribuimos los recursos a comunidades según disponibilidad y prioridad.</p>
           </article>
         </div>
       </section>
 
-      <section class="about surface" id="quienes">
-        <div class="surface__inner">
-          <div class="about__content">
-            <div>
-              <h2>¿Quiénes somos?</h2>
-              <p>
-                EcoFood es una plataforma digital que busca reducir el desperdicio de alimentos conectando personas,
-                donantes y beneficiarios. Nuestro objetivo es generar impacto social a través de la redistribución de recursos
-                y el apoyo a comunidades que lo necesitan.
-              </p>
-            </div>
-            <div class="about__image">
-              <img
-                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80"
-                alt="Voluntarios organizando cajas de comida"
-              />
-            </div>
+      <section class="about" id="quienes">
+        <div class="about__content">
+          <div>
+            <h2>¿Quiénes somos?</h2>
+            <p>
+              EcoFood es una iniciativa que articula donantes, centros de acopio y beneficiarios para reducir el desperdicio
+              y entregar alimentos frescos a quienes lo necesitan.
+            </p>
+          </div>
+          <div class="about__image">
+            <img
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80"
+              alt="Voluntarios organizando cajas de comida"
+            />
           </div>
         </div>
       </section>
+
+      <section class="impact" id="impacto">
+        <div class="section-heading">
+          <h2>Nuestro impacto</h2>
+          <p>Trabajamos cada día para llegar con esperanza a más hogares.</p>
+        </div>
+        <div class="impact__grid">
+          <article>
+            <p class="impact-value">+500 kg</p>
+            <p class="impact-label">alimentos recuperados</p>
+          </article>
+          <article>
+            <p class="impact-value">+200</p>
+            <p class="impact-label">familias beneficiadas</p>
+          </article>
+          <article>
+            <p class="impact-value">+50</p>
+            <p class="impact-label">donantes activos</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="donate" id="donar">
+        <div class="donate__card">
+          <h2>Dona y genera impacto</h2>
+          <p>Haz un aporte puntual o mensual para acompañar las entregas.</p>
+          <form class="donate__form">
+            <label>
+              Nombre:
+              <input type="text" placeholder="Nombre completo" />
+            </label>
+            <label>
+              Correo:
+              <input type="email" placeholder="correo@ejemplo.com" />
+            </label>
+            <label>
+              Cantidad:
+              <input type="text" placeholder="$" />
+            </label>
+            <label>
+              Mensaje:
+              <textarea placeholder="Un mensaje para la comunidad"></textarea>
+            </label>
+            <button type="button" class="solid">Donar</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <section class="auth-overlay" id="auth-overlay">
+      <div class="auth-card">
+        <button type="button" class="overlay-back" id="back-home">← Volver</button>
+        <div class="auth-views">
+          <article class="auth-panel login-panel active" id="login-panel">
+            <h2>Iniciar sesión</h2>
+            <form>
+              <label>
+                Correo:
+                <input type="email" placeholder="correo@ejemplo.com" required />
+              </label>
+              <label>
+                Contraseña:
+                <input type="password" placeholder="********" required />
+              </label>
+              <button type="button" class="solid" id="login-submit">Ingresar</button>
+            </form>
+            <p class="auth-toggle">
+              ¿No tienes cuenta?
+              <button type="button" data-view="register">Regístrate</button>
+            </p>
+          </article>
+          <article class="auth-panel" id="register-panel">
+            <h2>Crear cuenta</h2>
+            <form>
+              <label>
+                Nombre:
+                <input type="text" placeholder="Nombre completo" />
+              </label>
+              <label>
+                Correo:
+                <input type="email" placeholder="correo@ejemplo.com" />
+              </label>
+              <label>
+                Contraseña:
+                <input type="password" placeholder="********" />
+              </label>
+              <label>
+                Tipo de usuario:
+                <input type="text" placeholder="Donante / Beneficiario" />
+              </label>
+              <button type="button" class="solid">Registrarse</button>
+            </form>
+            <p class="auth-toggle">
+              ¿Ya tienes cuenta?
+              <button type="button" data-view="login">Inicia sesión</button>
+            </p>
+          </article>
+          <article class="auth-panel dashboard-panel" id="dashboard-panel">
+            <div class="dashboard-header">
+              <div>
+                <p>Bienvenido, Admin</p>
+                <h3>Panel de administración</h3>
+              </div>
+              <button type="button" class="outline" id="logout-dashboard">Cerrar sesión</button>
+            </div>
+            <div class="dashboard-grid">
+              <article>
+                <strong>120</strong>
+                <span>Donantes registrados</span>
+              </article>
+              <article>
+                <strong>80</strong>
+                <span>Beneficiarios activos</span>
+              </article>
+              <article>
+                <strong>45</strong>
+                <span>Entregas del mes</span>
+              </article>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+<footer class="site-footer">
+  <div class="footer__grid">
+    <div>
+      <h4>Menú</h4>
+      <a href="#inicio">Inicio</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#quienes">¿Quiénes somos?</a>
+      <a href="#impacto">Impacto</a>
+      <a href="#donar">Donar</a>
+      <a href="#login">Ingresar</a>
     </div>
-    <!-- Fin home -->
-  </main>
-  <!-- Fin main -->
-
-  <!-- Inicio footer -->
-  <div id="footer-placeholder"></div>
-  <!-- Fin footer -->
-
-  <!-- Inicio script -->
-  <script src="js/app.js"></script>
-  <!-- Fin script -->
-</body>
+    <div>
+      <h4>Síguenos</h4>
+      <a href="#"><span class="footer-icon">📘</span>Facebook</a>
+      <a href="#"><span class="footer-icon">📷</span>Instagram</a>
+      <a href="#"><span class="footer-icon">🐦</span>Twitter</a>
+      <a href="#"><span class="footer-icon">🎵</span>TikTok</a>
+    </div>
+    <div>
+      <h4>Contáctanos</h4>
+      <p>Correo: contacto@ecofood.com</p>
+      <p>Tel: +57 300 000 0000</p>
+      <p>Ubicación: Bogotá, Colombia</p>
+    </div>
+  </div>
+  <p>© 2026 EcoFood</p>
+</footer>
+    <script src="js/app.js"></script>
+  </body>
 </html>
