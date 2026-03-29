@@ -204,13 +204,18 @@
           <div></div>
           <p>Admin</p>
         </div>
-        <nav>
+        <nav class="sidebar-nav">
           <a href="#" data-view="inicio">Inicio</a>
           <a href="#" data-view="inventario">Inventario</a>
           <a href="#" data-view="donantes">Donantes</a>
           <a href="#" data-view="beneficiarios">Beneficiarios</a>
           <a href="#" data-view="roles">Roles</a>
           <a href="#" data-view="reportes">Reportes</a>
+          <div class="sidebar-divider"></div>
+          <span class="sidebar-label">Beneficiario</span>
+          <a href="#" data-view="beneficiario-inicio">Inicio</a>
+          <a href="#" data-view="beneficiario-ayudas">Mis ayudas</a>
+          <a href="#" data-view="beneficiario-cuenta">Mi cuenta</a>
         </nav>
       </aside>
       <div class="dashboard-body">
@@ -418,6 +423,68 @@
                 <span></span>
                 <span></span>
               </div>
+            </div>
+          </article>
+          <article class="dashboard-content" data-view="beneficiario-inicio">
+            <h4>Bienvenido, Beneficiario</h4>
+            <div class="dashboard-grid">
+              <article>
+                <strong>Activo</strong>
+                <span>Estado del beneficio</span>
+              </article>
+              <article>
+                <strong>3</strong>
+                <span>Ayudas recibidas</span>
+              </article>
+              <article>
+                <strong>10/03/2026</strong>
+                <span>Última entrega</span>
+              </article>
+            </div>
+            <div class="dashboard-chart">
+              <p>Distribución de ayudas</p>
+              <div class="chart-bars">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </article>
+          <article class="dashboard-content" data-view="beneficiario-ayudas">
+            <h4>Mis ayudas</h4>
+            <div class="table-card">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Fecha</th>
+                    <th>Tipo de ayuda</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>10/03/2026</td>
+                    <td>Alimentos</td>
+                    <td class="status-ok">Entregada</td>
+                  </tr>
+                  <tr>
+                    <td>01/03/2026</td>
+                    <td>Economía</td>
+                    <td class="status-pending">Pendiente</td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="outline">Ver historial</button>
+            </div>
+          </article>
+          <article class="dashboard-content" data-view="beneficiario-cuenta">
+            <h4>Mi cuenta</h4>
+            <div class="table-card">
+              <p><strong>Nombre:</strong> Pepito Pérez</p>
+              <p><strong>Correo:</strong> pepito@example.com</p>
+              <p><strong>Tipo:</strong> Beneficiario</p>
+              <button type="button" class="solid">Editar perfil</button>
             </div>
           </article>
         </div>

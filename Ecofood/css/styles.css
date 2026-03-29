@@ -1,3 +1,4 @@
+/* VARIABLES GLOBALES: paleta de colores y tipografía base de la aplicación */
 :root {
   font-family: "Inter", system-ui, sans-serif;
   font-size: 16px;
@@ -11,29 +12,41 @@
   --white: #ffffff;
 }
 
+/* RESETEO GLOBAL: elimina márgenes y aplica box-sizing uniforme */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* BASE GENERAL: cuerpo, enlaces y botones sin estilos específicos */
 body {
   min-height: 100vh;
   background: var(--soft);
   color: var(--black);
 }
 
+/* TIPOGRAFÍA GLOBAL: aplica misma fuente a controles */
+body,
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+/* ENLACES: heredan color y no subrayan */
 a {
   color: inherit;
   text-decoration: none;
 }
 
+/* BOTONES BASE: cursor y borde neutro */
 button {
-  font-family: inherit;
   cursor: pointer;
   border: none;
 }
 
+/* CABECERA PRINCIPAL: barra superior fija, logo y navegación */
 .top-bar {
   background: var(--white);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -43,6 +56,7 @@ button {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* CABECERA - CONTENEDOR INTERNO */
 .top-bar__inner {
   max-width: 1100px;
   margin: 0 auto;
@@ -53,6 +67,7 @@ button {
   gap: 1rem;
 }
 
+/* CABECERA - LOGOTIPO */
 .logo {
   font-weight: 700;
   font-size: 1.2rem;
@@ -62,6 +77,7 @@ button {
   color: var(--red-dark);
 }
 
+/* CABECERA - NAVEGACIÓN */
 .top-bar nav {
   display: flex;
   align-items: center;
@@ -70,18 +86,21 @@ button {
   font-weight: 500;
 }
 
+/* CABECERA - BOTÓN INGRESAR */
 .nav-login {
-  background: var(--orange);
+  background: var(--red-light);
   color: var(--white);
   border-radius: 999px;
   padding: 0.3rem 0.9rem;
 }
 
+/* CABECERA - CONTROLES TIPOGRAFÍA */
 .text-controls {
   display: flex;
   gap: 0.25rem;
 }
 
+/* CABECERA - BOTONES A+/A- */
 .text-control {
   background: var(--red-dark);
   color: var(--white);
@@ -90,10 +109,7 @@ button {
   font-size: 0.85rem;
 }
 
-.main {
-  padding-bottom: 3rem;
-}
-
+/* HERO PRINCIPAL: mensaje de bienvenida y acciones principales */
 .hero {
   max-width: 1100px;
   margin: 3rem auto 2rem;
@@ -106,45 +122,51 @@ button {
   gap: 2rem;
 }
 
+/* HERO - TITULO PRINCIPAL */
 .hero__copy h1 {
   font-size: clamp(2.4rem, 4vw, 3.5rem);
   margin-bottom: 0.7rem;
 }
 
+/* HERO - PARRAFO SECUNDARIO */
 .hero__copy p {
   margin-bottom: 1.5rem;
   color: rgba(0, 0, 0, 0.65);
 }
 
+/* HERO - CONJUNTO DE BOTONES */
 .hero__actions {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
 }
 
+/* HERO - IMAGEN DECORATIVA */
 .hero__image img {
   width: 100%;
   border-radius: 20px;
   object-fit: cover;
 }
 
-.solid {
-  background: var(--red-dark);
+/* BOTONES PRINCIPALES: color uniforme para acciones primarias */
+.solid,
+.outline {
+  background: var(--red-light);
   color: var(--white);
   padding: 0.7rem 1.4rem;
   border-radius: 999px;
   font-weight: 600;
+  border: none;
+  transition: transform 0.2s ease;
 }
 
-.outline {
-  background: transparent;
-  border: 2px solid var(--orange);
-  color: var(--black);
-  padding: 0.7rem 1.4rem;
-  border-radius: 999px;
-  font-weight: 600;
+/* BOTONES PRINCIPALES - EFECTO HOVER */
+.solid:hover,
+.outline:hover {
+  transform: translateY(-2px);
 }
 
+/* SECCIONES INFORMATIVAS: cómo funciona, impacto y donaciones */
 .how,
 .impact,
 .donate {
@@ -153,22 +175,26 @@ button {
   padding: 2rem 1.5rem;
 }
 
+/* SECCION - TITULO CENTRAL */
 .section-heading {
   text-align: center;
   margin-bottom: 1.5rem;
 }
 
+/* SECCION - SUBTITULO */
 .section-heading h2 {
   font-size: 2rem;
   margin-bottom: 0.4rem;
 }
 
+/* GRID DE CARDS */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
 }
 
+/* CARD INFORMATIVA */
 .card {
   background: var(--white);
   border-radius: 20px;
@@ -177,15 +203,18 @@ button {
   min-height: 200px;
 }
 
+/* ICONO DE CARD */
 .card .icon {
   font-size: 1.8rem;
 }
 
+/* ABOUT - FONDO LIGERO */
 .about {
   background: var(--soft);
   padding: 2rem 1.5rem;
 }
 
+/* ABOUT - CONTENEDOR PRINCIPAL */
 .about__content {
   max-width: 1100px;
   margin: 0 auto;
@@ -195,18 +224,21 @@ button {
   align-items: center;
 }
 
+/* ABOUT - IMAGEN */
 .about__image img {
   width: 100%;
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
 }
 
+/* IMPACT - CONTAINER DE ESTADISTICAS */
 .impact__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
 }
 
+/* IMPACT - TARJETAS */
 .impact__grid article {
   background: var(--white);
   border-radius: 18px;
@@ -215,16 +247,19 @@ button {
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* IMPACT - VALOR PRINCIPAL */
 .impact-value {
   font-size: 2rem;
   font-weight: 700;
   color: var(--red-dark);
 }
 
+/* IMPACT - DESCRIPCION */
 .impact-label {
   color: rgba(0, 0, 0, 0.6);
 }
 
+/* DONATE - TARJETA */
 .donate__card {
   background: var(--white);
   border-radius: 26px;
@@ -232,12 +267,14 @@ button {
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
 
+/* DONATE - FORMULARIO */
 .donate__form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
+/* DONATE - ETIQUETAS */
 .donate__form label {
   display: flex;
   flex-direction: column;
@@ -245,23 +282,166 @@ button {
   font-weight: 500;
 }
 
+/* DONATE - CAMPOS */
 .donate__form input,
 .donate__form textarea {
   padding: 0.8rem 1rem;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  font-family: inherit;
 }
 
+/* DONATE - TEXTAREA */
 .donate__form textarea {
   min-height: 110px;
   resize: vertical;
 }
 
+/* TABLAS Y ESTADOS: tablas de inventario, donantes y beneficiarios */
+.table-card {
+  background: var(--red-dark);
+  color: var(--white);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+/* TABLAS - ESTRUCTURA */
+.table-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* TABLAS - CELDAS */
+.table-card th,
+.table-card td {
+  text-align: left;
+  padding: 0.65rem 0.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 500;
+  color: #fff;
+}
+
+/* ESTADOS - DISPONIBLE */
+.status-ok {
+  color: #128c4d;
+  font-weight: 600;
+}
+
+/* ESTADOS - BAJO STOCK */
+.status-low {
+  color: var(--red-dark);
+  font-weight: 600;
+}
+
+/* ESTADOS - PENDIENTE */
+.status-pending {
+  color: var(--red-light);
+  font-weight: 600;
+}
+
+/* OVERLAY DE AUTENTICACIÓN: pantalla modal para login y registro */
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 110;
+}
+
+/* OVERLAY - ESTADO ACTIVO */
+.auth-overlay.active {
+  display: flex;
+}
+
+/* OVERLAY - TARJETA PRINCIPAL */
+.auth-card {
+  background: var(--white);
+  border-radius: 26px;
+  padding: 2rem;
+  width: min(540px, 100%);
+  position: relative;
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* OVERLAY - BOTON VOLVER */
+.overlay-back {
+  background: transparent;
+  color: var(--red-dark);
+  font-weight: 600;
+  border: none;
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+}
+
+/* OVERLAY - VISTAS */
+.auth-views {
+  display: grid;
+}
+
+/* OVERLAY - PANEL */
+.auth-panel {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* OVERLAY - PANEL VISIBLE */
+.auth-panel.active {
+  display: flex;
+}
+
+/* OVERLAY - TITULO */
+.auth-panel h2 {
+  margin-bottom: 0.5rem;
+}
+
+/* OVERLAY - FORMULARIO */
+.auth-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+/* OVERLAY - LABELS */
+.auth-panel label {
+  font-weight: 500;
+}
+
+/* OVERLAY - INPUTS */
+.auth-panel input {
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* OVERLAY - TOGGLE */
+.auth-toggle {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* OVERLAY - BOTON TOGGLE */
+.auth-toggle button {
+  background: none;
+  border: none;
+  color: var(--red-light);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* DASHBOARD GENERAL: vista completa para administradores y beneficiarios */
 .dashboard-page {
   display: none;
 }
 
+/* DASHBOARD GENERAL - VISTA ACTIVA */
 .dashboard-page.active {
   display: flex;
   gap: 1.5rem;
@@ -270,6 +450,7 @@ button {
   background: var(--soft);
 }
 
+/* SIDEBAR DEL DASHBOARD: navegación lateral con usuario */
 .dashboard-sidebar {
   width: 220px;
   background: var(--red-dark);
@@ -282,6 +463,7 @@ button {
   min-height: 430px;
 }
 
+/* SIDEBAR - AVATAR */
 .dashboard-avatar {
   display: flex;
   flex-direction: column;
@@ -290,6 +472,7 @@ button {
   font-weight: 600;
 }
 
+/* SIDEBAR - CIRCULO DE PERFIL */
 .dashboard-avatar div {
   width: 70px;
   height: 70px;
@@ -297,6 +480,7 @@ button {
   background: var(--white);
 }
 
+/* SIDEBAR - LISTA DE ENLACES */
 .dashboard-sidebar nav {
   display: flex;
   flex-direction: column;
@@ -304,11 +488,35 @@ button {
   margin-top: 1rem;
 }
 
+/* SIDEBAR - ENLACES */
 .dashboard-sidebar a {
   color: var(--white);
   font-weight: 500;
 }
 
+/* SIDEBAR - ENLACE ACTIVO */
+.dashboard-sidebar a.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+}
+
+/* SIDEBAR ADICIONAL: separador visual y etiqueta para beneficiarios */
+.sidebar-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.18);
+  margin: 0.75rem 0;
+}
+
+/* ETIQUETA: texto de sección favorable */
+.sidebar-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* CONTENIDO CENTRAL DEL DASHBOARD: tarjetas, tablas y gráficas */
 .dashboard-body {
   flex: 1;
   background: var(--white);
@@ -320,24 +528,69 @@ button {
   gap: 1.5rem;
 }
 
+/* DASHBOARD - ENCABEZADO */
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* DASHBOARD - SUBTEXTO HEADER */
 .dashboard-header p {
   font-size: 0.85rem;
   color: rgba(0, 0, 0, 0.7);
 }
 
+/* DASHBOARD - GRID DE ESTADISTICAS */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.9rem;
+}
+
+/* DASHBOARD - TARJETAS DE ESTADISTICAS */
+.dashboard-grid article {
+  background: var(--red-dark);
+  color: var(--white);
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* DASHBOARD - VALORES FUERTES */
+.dashboard-grid strong {
+  font-size: 1.6rem;
+  display: block;
+}
+
+/* DASHBOARD - CONTENEDORES DE VISTA */
+.dashboard-panels {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* DASHBOARD - PANEL INDIVIDUAL */
+.dashboard-content {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* DASHBOARD - PANEL ACTIVO */
+.dashboard-content.active {
+  display: flex;
+}
+
+/* DASHBOARD - CARTA DE GRÁFICAS */
 .dashboard-chart {
-  background: #fff5f5;
+  background: var(--soft);
   border-radius: 20px;
   padding: 1.5rem;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
+/* DASHBOARD - BARRAS DE GRÁFICA */
 .chart-bars {
   display: flex;
   gap: 0.8rem;
@@ -345,6 +598,7 @@ button {
   align-items: flex-end;
 }
 
+/* DASHASBOARD - BARRA INDIVIDUAL */
 .chart-bars span {
   flex: 1;
   height: 70px;
@@ -352,185 +606,15 @@ button {
   border-radius: 10px;
 }
 
-.table-card {
-  background: #fff;
-  border-radius: 18px;
-  padding: 1.5rem;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-  margin-bottom: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
-
-.table-card table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.table-card th,
-.table-card td {
-  text-align: left;
-  padding: 0.65rem 0.4rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  font-weight: 500;
-}
-
-.status-ok {
-  color: #128c4d;
-  font-weight: 600;
-}
-
-.status-low {
-  color: #c62828;
-  font-weight: 600;
-}
-
-.status-pending {
-  color: #ef5350;
-  font-weight: 600;
-}
-
-.dashboard-content {
-  display: none;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.dashboard-content.active {
-  display: flex;
-}
-
-.dashboard-sidebar a.active {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 999px;
-  padding: 0.4rem 0.9rem;
-}
-
-.auth-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.auth-overlay.active {
-  display: flex;
-}
-
-.auth-card {
-  background: var(--white);
-  border-radius: 26px;
-  padding: 2rem;
-  width: min(540px, 100%);
-  position: relative;
-  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.2);
-}
-
-.overlay-back {
-  background: transparent;
-  color: var(--red-dark);
-  font-weight: 600;
-  border: none;
-  position: absolute;
-  top: 1.2rem;
-  left: 1.2rem;
-}
-
-.auth-views {
-  display: grid;
-}
-
-.auth-panel {
-  display: none;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.auth-panel.active {
-  display: flex;
-}
-
-.auth-panel h2 {
-  margin-bottom: 0.5rem;
-}
-
-.auth-panel form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
-
-.auth-panel label {
-  font-weight: 500;
-}
-
-.auth-panel input {
-  padding: 0.7rem 1rem;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-}
-
-.auth-toggle {
-  color: rgba(0, 0, 0, 0.6);
-}
-
-.auth-toggle button {
-  background: none;
-  border: none;
-  color: var(--red-light);
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.dashboard-panel {
-  background: #fdfdfd;
-  padding: 1.25rem;
-  border-radius: 18px;
-  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.12);
-}
-
-.dashboard-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.dashboard-header p {
-  font-size: 0.9rem;
-  color: rgba(0, 0, 0, 0.65);
-}
-
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 0.9rem;
-}
-
-.dashboard-grid article {
-  background: var(--orange);
-  color: var(--white);
-  border-radius: 14px;
-  padding: 1rem;
-  text-align: center;
-}
-
-.dashboard-grid strong {
-  font-size: 1.6rem;
-  display: block;
-}
-
+/* PIE DE PÁGINA: footer fijo con enlaces sociales y contacto */
 .site-footer {
-  background: var(--black);
+  background: var(--red-dark);
   color: var(--white);
   padding: 3rem 1.5rem 2rem;
   margin-top: 4rem;
 }
 
+/* FOOTER - GRID DE COLUMNAS */
 .footer__grid {
   max-width: 1100px;
   margin: 0 auto 1.5rem;
@@ -539,12 +623,14 @@ button {
   gap: 1rem;
 }
 
+/* FOOTER - TÍTULOS */
 .footer__grid h4 {
   text-transform: uppercase;
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
 }
 
+/* FOOTER - ENLACES */
 .footer__grid a {
   display: inline-flex;
   align-items: center;
@@ -553,26 +639,32 @@ button {
   color: var(--white);
 }
 
+/* FOOTER - COPYRIGHT */
 .site-footer p {
   text-align: center;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* ESTADOS GLOBALES: clases que ocultan secciones durante overlay o dashboard */
 body.dashboard-active {
   background: var(--soft);
 }
 
+/* ESTADO DASHBOARD: home y footer ocultos */
 body.dashboard-active .top-bar,
 body.dashboard-active main,
-body.dashboard-active .auth-overlay {
+body.dashboard-active .auth-overlay,
+body.dashboard-active .site-footer {
   display: none;
 }
 
+/* DASHBOARD - MUESTRA panel */
 body.dashboard-active .dashboard-page {
   display: flex;
 }
 
+/* ESTADO OVERLAY: oculta el home mientras se muestra login */
 body.overlay-active header,
 body.overlay-active main,
 body.overlay-active .dashboard-page,
@@ -580,16 +672,20 @@ body.overlay-active .site-footer {
   display: none;
 }
 
+/* RESPONSIVE: adapta el menú y tarjetas a pantallas pequeñas */
 @media (max-width: 640px) {
+  /* RESPONSIVE - BARRA SUPERIOR */
   .top-bar__inner {
     flex-direction: column;
     align-items: flex-start;
   }
 
+  /* RESPONSIVE - HERO */
   .hero {
     padding: 1.8rem;
   }
 
+  /* RESPONSIVE - OVERLAY */
   .auth-card {
     padding: 1.5rem;
   }
