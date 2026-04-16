@@ -1,4 +1,61 @@
-document.addEventListener("DOMContentLoaded", () => {
+const layoutFragments = [
+  { selector: "#header-placeholder", url: "pages/header.html", templateId: "header-template" },
+  { selector: "#dashboard-placeholder", url: "pages/dashboard-panel.html" },
+  { selector: "#footer-placeholder", url: "pages/footer.html", templateId: "footer-template" },
+];
+
+const authFragments = [
+  { selector: "#auth-views", url: "pages/login-panel.html", templateId: "login-template", append: true },
+  { selector: "#auth-views", url: "pages/register-panel.html", templateId: "register-template", append: true },
+];
+
+const applyTemplate = (templateId, container, append = false) => {
+  if (!templateId || !container) return;
+  const template = document.getElementById(templateId);
+  if (!template) return;
+  if (append) {
+    container.insertAdjacentHTML("beforeend", template.innerHTML);
+  } else {
+    container.innerHTML = template.innerHTML;
+  }
+};
+
+const loadFragment = async ({ selector, url, append, templateId }) => {
+  const container = document.querySelector(selector);
+  if (!container) return;
+  if (!url) {
+    applyTemplate(templateId, container, append);
+    return;
+  }
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    const html = await response.text();
+    if (append) {
+      container.insertAdjacentHTML("beforeend", html);
+    } else {
+      container.innerHTML = html;
+    }
+  } catch (error) {
+    applyTemplate(templateId, container, append);
+  }
+};
+
+const loadAllFragments = async () => {
+  for (const fragment of layoutFragments) {
+    await loadFragment(fragment);
+  }
+  const authContainer = document.querySelector("#auth-views");
+  if (authContainer) {
+    for (const fragment of authFragments) {
+      await loadFragment(fragment);
+    }
+  }
+};
+
+const initApp = () => {
   const overlay = document.getElementById("auth-overlay");
   const loginPanel = document.getElementById("login-panel");
   const registerPanel = document.getElementById("register-panel");
@@ -13,18 +70,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const showView = (view) => {
     [loginPanel, registerPanel].forEach((panel) => {
-      panel.classList.toggle("active", panel.id === view);
+      panel?.classList.toggle("active", panel.id === view);
     });
   };
 
   const showOverlay = (view) => {
-    overlay.classList.add("active");
+    overlay?.classList.add("active");
     document.body.classList.add("overlay-active");
     showView(view);
   };
 
   const hideOverlay = () => {
-    overlay.classList.remove("active");
+    overlay?.classList.remove("active");
     document.body.classList.remove("overlay-active");
   };
 
@@ -100,4 +157,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadAllFragments()
+    .then(() => initApp())
+    .catch((error) => console.error("Error al cargar componentes:", error));
 });

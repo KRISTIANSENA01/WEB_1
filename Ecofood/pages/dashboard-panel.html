@@ -1,0 +1,294 @@
+﻿<section class="dashboard-page" id="dashboard-page">
+      <aside class="dashboard-sidebar">
+        <div class="dashboard-avatar">
+          <div></div>
+          <p>Admin</p>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="#" data-view="inicio">Inicio</a>
+          <a href="#" data-view="inventario">Inventario</a>
+          <a href="#" data-view="donantes">Donantes</a>
+          <a href="#" data-view="beneficiarios">Beneficiarios</a>
+          <a href="#" data-view="roles">Roles</a>
+          <a href="#" data-view="reportes">Reportes</a>
+          <div class="sidebar-divider"></div>
+          <span class="sidebar-label">Beneficiario</span>
+          <a href="#" data-view="beneficiario-inicio">Inicio</a>
+          <a href="#" data-view="beneficiario-ayudas">Mis ayudas</a>
+          <a href="#" data-view="beneficiario-cuenta">Mi cuenta</a>
+        </nav>
+      </aside>
+      <div class="dashboard-body">
+        <header class="dashboard-header">
+          <div>
+            <p>Bienvenido, Admin</p>
+            <h3>Panel de administración</h3>
+          </div>
+          <button type="button" class="solid" id="logout-dashboard">Cerrar sesión</button>
+        </header>
+        <div class="dashboard-panels">
+          <article class="dashboard-content active" data-view="inicio">
+            <div class="dashboard-grid">
+              <article>
+                <strong>120</strong>
+                <span>Donantes registrados</span>
+              </article>
+              <article>
+                <strong>80</strong>
+                <span>Beneficiarios activos</span>
+              </article>
+              <article>
+                <strong>80</strong>
+                <span>Beneficiarios activos</span>
+              </article>
+              <article>
+                <strong>45</strong>
+                <span>Entregas del mes</span>
+              </article>
+            </div>
+            <div class="dashboard-chart">
+              <p>Donativos por mes</p>
+              <div class="chart-bars">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </article>
+          <article class="dashboard-content" data-view="inventario">
+            <h4>Inventario</h4>
+            <div class="table-card">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Estado</th>
+                    <th>Fecha</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Arroz</td>
+                    <td>50 kg</td>
+                    <td class="status-ok">Disponible</td>
+                    <td>10/03/2026</td>
+                  </tr>
+                  <tr>
+                    <td>Lentejas</td>
+                    <td>30 kg</td>
+                    <td class="status-low">Bajo stock</td>
+                    <td>08/03/2026</td>
+                  </tr>
+                  <tr>
+                    <td>Aceite</td>
+                    <td>20 L</td>
+                    <td class="status-ok">Disponible</td>
+                    <td>05/03/2026</td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="outline">+ Agregar producto</button>
+            </div>
+          </article>
+          <article class="dashboard-content" data-view="donantes">
+            <h4>Donantes</h4>
+            <div class="table-card">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Tipo</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>María Gómez</td>
+                    <td>maria@email.com</td>
+                    <td>Dinero</td>
+                    <td class="status-ok">Activo</td>
+                  </tr>
+                  <tr>
+                    <td>Juan Pérez</td>
+                    <td>juan@email.com</td>
+                    <td>Alimentos</td>
+                    <td class="status-ok">Activo</td>
+                  </tr>
+                  <tr>
+                    <td>Laura Pérez</td>
+                    <td>laura@email.com</td>
+                    <td>Mixto</td>
+                    <td class="status-low">Inactivo</td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="solid">Ver detalle</button>
+            </div>
+          </article>
+          <article class="dashboard-content" data-view="beneficiarios">
+            <h4>Beneficiarios</h4>
+            <div class="table-card">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Tipo ayuda</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Pedro Martínez</td>
+                    <td>pedro@email.com</td>
+                    <td>Alimentos</td>
+                    <td class="status-ok">Activo</td>
+                  </tr>
+                  <tr>
+                    <td>Ana Torres</td>
+                    <td>ana@email.com</td>
+                    <td>Economía</td>
+                    <td class="status-pending">Pendiente</td>
+                  </tr>
+                  <tr>
+                    <td>Luis Ramírez</td>
+                    <td>luis@email.com</td>
+                    <td>Mixto</td>
+                    <td class="status-low">Inactivo</td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="outline">Ver detalle</button>
+            </div>
+          </article>
+          <article class="dashboard-content" data-view="roles">
+            <h4>Roles</h4>
+            <div class="table-card">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Rol</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Juan Pérez</td>
+                    <td>juan@email.com</td>
+                    <td>Donante</td>
+                    <td><button class="outline">Cambiar</button></td>
+                  </tr>
+                  <tr>
+                    <td>Carlos Ruiz</td>
+                    <td>carlos@email.com</td>
+                    <td>Administrador</td>
+                    <td><button class="outline">Cambiar</button></td>
+                  </tr>
+                  <tr>
+                    <td>Ana López</td>
+                    <td>ana@email.com</td>
+                    <td>Beneficiario</td>
+                    <td><button class="outline">Cambiar</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+          <article class="dashboard-content" data-view="reportes">
+            <h4>Reportes</h4>
+            <div class="dashboard-grid">
+              <article>
+                <strong>$2.000.000</strong>
+                <span>Total donaciones</span>
+              </article>
+              <article>
+                <strong>120</strong>
+                <span>Total entregas</span>
+              </article>
+              <article>
+                <strong>80</strong>
+                <span>Beneficiarios activos</span>
+              </article>
+            </div>
+            <div class="dashboard-chart">
+              <p>Distribución de ayudas</p>
+              <div class="chart-bars">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </article>
+          <article class="dashboard-content" data-view="beneficiario-inicio">
+            <h4>Bienvenido, Beneficiario</h4>
+            <div class="dashboard-grid">
+              <article>
+                <strong>Activo</strong>
+                <span>Estado del beneficio</span>
+              </article>
+              <article>
+                <strong>3</strong>
+                <span>Ayudas recibidas</span>
+              </article>
+              <article>
+                <strong>10/03/2026</strong>
+                <span>Última entrega</span>
+              </article>
+            </div>
+            <div class="dashboard-chart">
+              <p>Distribución de ayudas</p>
+              <div class="chart-bars">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </article>
+          <article class="dashboard-content" data-view="beneficiario-ayudas">
+            <h4>Mis ayudas</h4>
+            <div class="table-card">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Fecha</th>
+                    <th>Tipo de ayuda</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>10/03/2026</td>
+                    <td>Alimentos</td>
+                    <td class="status-ok">Entregada</td>
+                  </tr>
+                  <tr>
+                    <td>01/03/2026</td>
+                    <td>Economía</td>
+                    <td class="status-pending">Pendiente</td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="outline">Ver historial</button>
+            </div>
+          </article>
+          <article class="dashboard-content" data-view="beneficiario-cuenta">
+            <h4>Mi cuenta</h4>
+            <div class="table-card">
+              <p><strong>Nombre:</strong> Pepito Pérez</p>
+              <p><strong>Correo:</strong> pepito@example.com</p>
+              <p><strong>Tipo:</strong> Beneficiario</p>
+              <button type="button" class="solid">Editar perfil</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+

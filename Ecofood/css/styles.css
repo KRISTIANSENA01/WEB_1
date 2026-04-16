@@ -24,6 +24,7 @@ body {
   min-height: 100vh;
   background: var(--soft);
   color: var(--black);
+  padding-top: 92px;
 }
 
 /* TIPOGRAFÍA GLOBAL: aplica misma fuente a controles */
@@ -50,10 +51,12 @@ button {
 .top-bar {
   background: var(--white);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 90;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.12);
 }
 
 /* CABECERA - CONTENEDOR INTERNO */
@@ -74,9 +77,31 @@ button {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  color: var(--red-dark);
 }
 
+.logo-icon {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: flex;
+  align-items: baseline;
+  gap: 0.1rem;
+}
+
+.logo-primary {
+  color: var(--red-light);
+  font-weight: 700;
+}
+
+.logo-secondary {
+  color: var(--black);
+  font-weight: 400;
+}
+
+ 
 /* CABECERA - NAVEGACIÓN */
 .top-bar nav {
   display: flex;
@@ -84,6 +109,10 @@ button {
   gap: 0.9rem;
   flex-wrap: wrap;
   font-weight: 500;
+}
+
+main {
+  scroll-margin-top: 120px;
 }
 
 /* CABECERA - BOTÓN INGRESAR */
@@ -102,7 +131,7 @@ button {
 
 /* CABECERA - BOTONES A+/A- */
 .text-control {
-  background: var(--red-dark);
+  background: var(--red-light);
   color: var(--white);
   border-radius: 999px;
   padding: 0.35rem 0.75rem;
@@ -111,20 +140,21 @@ button {
 
 /* HERO PRINCIPAL: mensaje de bienvenida y acciones principales */
 .hero {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 3rem auto 2rem;
-  padding: 2.5rem;
-  border-radius: 28px;
-  background: var(--white);
-  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.08);
+  padding: 3rem;
+  border-radius: 32px;
+  background: linear-gradient(180deg, #ffeef1 0%, #ffe8ec 100%);
+  box-shadow: 0 35px 60px rgba(0, 0, 0, 0.08);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  align-items: center;
 }
 
 /* HERO - TITULO PRINCIPAL */
 .hero__copy h1 {
-  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  font-size: clamp(2.6rem, 4vw, 3.8rem);
   margin-bottom: 0.7rem;
 }
 
@@ -137,8 +167,9 @@ button {
 /* HERO - CONJUNTO DE BOTONES */
 .hero__actions {
   display: flex;
-  gap: 0.75rem;
+  gap: 1rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 /* HERO - IMAGEN DECORATIVA */
@@ -151,28 +182,38 @@ button {
 /* BOTONES PRINCIPALES: color uniforme para acciones primarias */
 .solid,
 .outline {
+  border-radius: 18px;
+  padding: 0.9rem 2rem;
+  font-weight: 700;
+  border: 2px solid var(--red-light);
+  transition: all 0.2s ease;
+}
+
+.solid {
   background: var(--red-light);
   color: var(--white);
-  padding: 0.7rem 1.4rem;
-  border-radius: 999px;
-  font-weight: 600;
-  border: none;
-  transition: transform 0.2s ease;
+  box-shadow: 0 12px 25px rgba(239, 83, 80, 0.35);
+}
+
+.outline {
+  background: transparent;
+  color: var(--red-light);
 }
 
 /* BOTONES PRINCIPALES - EFECTO HOVER */
 .solid:hover,
 .outline:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(239, 83, 80, 0.35);
 }
 
 /* SECCIONES INFORMATIVAS: cómo funciona, impacto y donaciones */
 .how,
 .impact,
 .donate {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto 2.5rem;
-  padding: 2rem 1.5rem;
+  padding: 3rem 1.5rem;
 }
 
 /* SECCION - TITULO CENTRAL */
@@ -190,22 +231,27 @@ button {
 /* GRID DE CARDS */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.3rem;
 }
 
-/* CARD INFORMATIVA */
 .card {
-  background: var(--white);
-  border-radius: 20px;
-  padding: 1.5rem;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-  min-height: 200px;
+  background: #fff;
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.08);
+  min-height: 220px;
 }
 
-/* ICONO DE CARD */
 .card .icon {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #fde7ea;
 }
 
 /* ABOUT - FONDO LIGERO */
@@ -649,6 +695,7 @@ button {
 /* ESTADOS GLOBALES: clases que ocultan secciones durante overlay o dashboard */
 body.dashboard-active {
   background: var(--soft);
+  padding-top: 0;
 }
 
 /* ESTADO DASHBOARD: home y footer ocultos */
@@ -690,3 +737,5 @@ body.overlay-active .site-footer {
     padding: 1.5rem;
   }
 }
+hkjhj
+
