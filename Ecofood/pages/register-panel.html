@@ -1,24 +1,21 @@
 <article class="auth-panel" id="register-panel">
   <h2>Crear cuenta</h2>
-  <form>
+  <form id="registerForm">
     <label>
       Nombre:
-      <input type="text" placeholder="Nombre completo" />
+      <input id="register-name" type="text" placeholder="Nombre completo" required />
     </label>
     <label>
       Correo:
-      <input type="email" placeholder="correo@ejemplo.com" />
+      <input id="register-email" type="email" placeholder="correo@ejemplo.com" required />
     </label>
     <label>
       Contrase&ntilde;a:
-      <input type="password" placeholder="********" />
+      <input id="register-password" type="password" placeholder="********" required />
     </label>
-    <label>
-      Tipo de usuario:
-      <input type="text" placeholder="Donante / Beneficiario" />
-    </label>
-    <button type="button" class="solid">Registrarse</button>
+    <button id="register-submit" type="submit" class="solid">Registrarse</button>
   </form>
+  <p id="registerMessage" class="auth-message"></p>
   <p class="auth-toggle">
     &iquest;Ya tienes cuenta?
     <button type="button" data-auth-view="login-panel">Inicia sesi&oacute;n</button>

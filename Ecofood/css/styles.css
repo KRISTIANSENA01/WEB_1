@@ -420,11 +420,14 @@ main {
 .overlay-back {
   background: transparent;
   color: var(--red-dark);
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1;
   border: none;
   position: absolute;
-  top: 1.2rem;
-  left: 1.2rem;
+  top: 0.8rem;
+  left: 1rem;
+  padding: 0.2rem 0.45rem;
 }
 
 /* OVERLAY - VISTAS */
@@ -737,5 +740,3 @@ body.overlay-active .site-footer {
     padding: 1.5rem;
   }
 }
-hkjhj
-
