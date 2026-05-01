@@ -1,6 +1,6 @@
 import { supabase } from './supabaseClient.js';
 
-export async function requireAuth(redirectTo = './Index.html') {
+export async function requireAuth(redirectTo = './index.html') {
   const { data } = await supabase.auth.getSession();
   if (!data.session) {
     window.location.href = redirectTo;
@@ -9,7 +9,7 @@ export async function requireAuth(redirectTo = './Index.html') {
   return true;
 }
 
-export async function requireRole(allowedRoles = [], redirectTo = './Index.html') {
+export async function requireRole(allowedRoles = [], redirectTo = './index.html') {
   const { data } = await supabase.auth.getSession();
   const user = data.session?.user;
   if (!user) {

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -7,55 +7,54 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
     <div id="header-placeholder"></div>
 
-    <main>
+    <main id="contenido" class="page-shell">
       <section class="hero" id="inicio">
         <div class="hero__copy">
-          <p class="eyebrow">Conectamos acciones con impacto</p>
-          <h1>Reduce el desperdicio, comparte esperanza</h1>
+          <p class="eyebrow">Alimentos con impacto social real</p>
+          <h1>Menos desperdicio, más ayuda para las familias</h1>
           <p>
-            Generamos impacto social conectando alimentos, personas y recursos con quienes más lo necesitan.
+            EcoFood conecta donaciones, voluntariado y distribución solidaria para que cada alimento llegue a quien lo necesita.
           </p>
           <div class="hero__actions">
-            <button class="solid">Donar ahora</button>
-            <button class="outline">¿Cómo funciona?</button>
+            <button type="button" class="solid" data-scroll-target="#donar">Donar ahora</button>
+            <button type="button" class="outline" data-scroll-target="#como-funciona">Cómo funciona</button>
           </div>
         </div>
         <div class="hero__image">
-          <img
-            src="./img/img_01.jpeg"
-            alt="Caja de alimentos frescos"
-          />
+          <img src="./img/img_01.jpeg" alt="Caja con alimentos frescos lista para ser entregada" />
         </div>
       </section>
 
       <section class="how" id="como-funciona">
         <div class="section-heading">
-          <h2>¿Cómo funciona?</h2>
-          <p>Donantes, beneficiarios y voluntarios se conectan en tres pasos simples.</p>
+          <h2>Cómo funciona</h2>
+          <p>Todo el proceso está pensado para que donar o recibir ayuda sea simple, claro y rápido.</p>
         </div>
         <div class="grid">
           <article class="card">
-          <span class="icon">🧾</span>
-          <h3>Registro</h3>
-          <p>Crea tu perfil como donante, beneficiario o aliado comunitario en minutos.</p>
+            <span class="icon" aria-hidden="true">1</span>
+            <h3>Te registras</h3>
+            <p>Creas tu perfil como donante, beneficiario o aliado comunitario en pocos minutos.</p>
           </article>
           <article class="card">
-          <span class="icon">🎁</span>
-          <h3>Donación</h3>
-          <p>Comparte excedentes que de otra forma se perderían o realiza aportes económicos.</p>
+            <span class="icon" aria-hidden="true">2</span>
+            <h3>Compartes apoyo</h3>
+            <p>Publicas alimentos, ayudas económicas o necesidades prioritarias según tu rol.</p>
           </article>
           <article class="card">
-          <span class="icon">📦</span>
-          <h3>Entrega</h3>
-          <p>Distribuimos los recursos a comunidades según disponibilidad y prioridad.</p>
+            <span class="icon" aria-hidden="true">3</span>
+            <h3>Coordinamos entrega</h3>
+            <p>EcoFood organiza la distribución con enfoque social y seguimiento visible.</p>
           </article>
         </div>
       </section>
@@ -63,17 +62,16 @@
       <section class="about" id="quienes">
         <div class="about__content">
           <div>
-            <h2>¿Quiénes somos?</h2>
+            <h2>Quiénes somos</h2>
             <p>
-              EcoFood es una iniciativa que articula donantes, centros de acopio y beneficiarios para reducir el desperdicio
-              y entregar alimentos frescos a quienes lo necesitan.
+              Somos una iniciativa enfocada en recuperar alimentos, reducir pérdidas y transformar donaciones en apoyo útil para comunidades vulnerables.
+            </p>
+            <p class="helper-text">
+              Reunimos personas, organizaciones y recursos para que cada acción genere resultados concretos.
             </p>
           </div>
           <div class="about__image">
-            <img
-              src="./img/img_02.jpeg"
-              alt="Voluntarios organizando cajas de comida"
-            />
+            <img src="./img/img_02.jpeg" alt="Voluntarios organizando cajas de comida para entrega comunitaria" />
           </div>
         </div>
       </section>
@@ -81,7 +79,7 @@
       <section class="impact" id="impacto">
         <div class="section-heading">
           <h2>Nuestro impacto</h2>
-          <p>Trabajamos cada día para llegar con esperanza a más hogares.</p>
+          <p>Medimos el cambio para seguir llegando mejor y más lejos.</p>
         </div>
         <div class="impact__grid">
           <article>
@@ -90,7 +88,7 @@
           </article>
           <article>
             <p class="impact-value">+200</p>
-            <p class="impact-label">familias beneficiadas</p>
+            <p class="impact-label">familias apoyadas</p>
           </article>
           <article>
             <p class="impact-value">+50</p>
@@ -101,142 +99,499 @@
 
       <section class="donate" id="donar">
         <div class="donate__card">
-          <h2>Dona y genera impacto</h2>
-          <p>Haz un aporte puntual o mensual para acompañar las entregas.</p>
-          <form class="donate__form">
+          <h2>Haz una donación</h2>
+          <p class="helper-text">Puedes dejar tus datos y simular una donación desde esta vista sin errores de formulario.</p>
+          <form class="donate__form" id="donation-form" novalidate>
+            <div class="donate__grid">
+              <label>
+                Nombre
+                <input id="donation-name" name="name" type="text" placeholder="Nombre completo" required />
+              </label>
+              <label>
+                Correo
+                <input id="donation-email" name="email" type="email" placeholder="correo@ejemplo.com" required />
+              </label>
+            </div>
+            <div class="donate__grid">
+              <label>
+                Tipo de apoyo
+                <input id="donation-type" name="type" type="text" placeholder="Alimentos, dinero o voluntariado" required />
+              </label>
+              <label>
+                Cantidad estimada
+                <input id="donation-amount" name="amount" type="text" placeholder="Ejemplo: 50 kg o $100.000" required />
+              </label>
+            </div>
             <label>
-              Nombre:
-              <input type="text" placeholder="Nombre completo" />
+              Mensaje
+              <textarea id="donation-message-input" name="message" placeholder="Cuéntanos cómo te gustaría apoyar"></textarea>
             </label>
-            <label>
-              Correo:
-              <input type="email" placeholder="correo@ejemplo.com" />
-            </label>
-            <label>
-              Cantidad:
-              <input type="text" placeholder="$" />
-            </label>
-            <label>
-              Mensaje:
-              <textarea placeholder="Un mensaje para la comunidad"></textarea>
-            </label>
-            <button type="button" class="solid">Donar</button>
+            <button type="submit" class="solid">Enviar intención de donación</button>
+            <p id="donation-message" class="form-feedback" aria-live="polite"></p>
           </form>
         </div>
       </section>
     </main>
 
-    <section class="auth-overlay" id="auth-overlay">
+    <section class="auth-overlay" id="auth-overlay" aria-hidden="true">
       <div class="auth-card">
-        <button type="button" class="overlay-back" id="back-home" aria-label="Volver">←</button>
+        <button type="button" class="overlay-back" id="back-home" aria-label="Volver a la página principal">←</button>
         <div class="auth-views" id="auth-views"></div>
       </div>
     </section>
 
-    <div id="dashboard-placeholder"></div>
+    <section
+      class="accessibility-panel"
+      id="accessibility-panel"
+      aria-labelledby="accessibility-title"
+      aria-hidden="true"
+    >
+      <button type="button" class="accessibility-close" id="accessibility-close" aria-label="Cerrar ayuda visual">×</button>
+      <div>
+        <h3 id="accessibility-title">Ayuda visual</h3>
+        <p class="helper-text">Cambia contraste, colores y tamaño del texto según te resulte más cómodo.</p>
+      </div>
+      <div class="accessibility-options">
+        <div>
+          <p class="helper-text">Colores</p>
+          <div class="theme-options">
+            <button type="button" class="theme-button" data-theme="default">Tema original</button>
+            <button type="button" class="theme-button" data-theme="high-contrast">Alto contraste</button>
+            <button type="button" class="theme-button" data-theme="soft-contrast">Contraste suave</button>
+            <button type="button" class="theme-button" data-theme="color-safe">Colores seguros</button>
+          </div>
+        </div>
+        <div>
+          <p class="helper-text">Texto</p>
+          <div class="font-options">
+            <button type="button" class="font-button" data-font-control="decrease">Texto más pequeño</button>
+            <button type="button" class="font-button" data-font-control="reset">Texto normal</button>
+            <button type="button" class="font-button" data-font-control="increase">Texto más grande</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <div id="dashboard-placeholder"></div>
     <div id="footer-placeholder"></div>
 
     <template id="header-template">
       <header class="top-bar">
         <div class="top-bar__inner">
           <div class="logo">
-            <img src="./img/icono.ico" alt="Icono EcoFood" class="logo-icon" />
+            <img src="./img/icono.ico" alt="Icono de EcoFood" class="logo-icon" />
             <span class="logo-text">
               <span class="logo-primary">Eco</span><span class="logo-secondary">Food</span>
             </span>
           </div>
-          <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#como-funciona">&iquest;C&oacute;mo funciona?</a>
-            <a href="#quienes">&iquest;Qui&eacute;nes somos?</a>
-            <a href="#impacto">Impacto</a>
-            <a href="#donar">Donar</a>
-            <a href="#login" class="nav-login">Ingresar</a>
-          </nav>
-          <div class="text-controls">
-            <button type="button" class="text-control" data-font-control="decrease">A-</button>
-            <button type="button" class="text-control" data-font-control="reset">A</button>
-            <button type="button" class="text-control" data-font-control="increase">A+</button>
+          <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+          </button>
+          <div class="nav-shell" id="nav-shell">
+            <nav class="top-nav" id="site-nav" aria-label="Navegación principal">
+              <a href="#inicio">Inicio</a>
+              <a href="#como-funciona">Cómo funciona</a>
+              <a href="#quienes">Quiénes somos</a>
+              <a href="#impacto">Impacto</a>
+              <a href="#donar">Donar</a>
+              <a href="#login" class="nav-login">Ingresar</a>
+            </nav>
+            <div class="header-actions">
+              <button type="button" class="accessibility-open" id="accessibility-toggle">Ayuda visual</button>
+            </div>
           </div>
         </div>
       </header>
     </template>
+
     <template id="footer-template">
       <footer class="site-footer">
-        <div class="footer__grid">
-          <div>
-            <h4>Menú</h4>
-            <a href="#inicio">Inicio</a>
-            <a href="#como-funciona">&iquest;C&oacute;mo funciona?</a>
-            <a href="#quienes">&iquest;Qui&eacute;nes somos?</a>
-            <a href="#impacto">Impacto</a>
-            <a href="#donar">Donar</a>
-            <a href="#login">Ingresar</a>
+        <div class="site-footer__inner">
+          <div class="footer__grid">
+            <div>
+              <h4>Menú</h4>
+              <a href="#inicio">Inicio</a>
+              <a href="#como-funciona">Cómo funciona</a>
+              <a href="#quienes">Quiénes somos</a>
+              <a href="#impacto">Impacto</a>
+              <a href="#donar">Donar</a>
+            </div>
+            <div>
+              <h4>Redes</h4>
+              <a href="#" aria-label="Facebook de EcoFood"><span class="footer-icon" aria-hidden="true">f</span>Facebook</a>
+              <a href="#" aria-label="Instagram de EcoFood"><span class="footer-icon" aria-hidden="true">◎</span>Instagram</a>
+              <a href="#" aria-label="X de EcoFood"><span class="footer-icon" aria-hidden="true">X</span>X</a>
+              <a href="#" aria-label="TikTok de EcoFood"><span class="footer-icon" aria-hidden="true">♪</span>TikTok</a>
+            </div>
+            <div>
+              <h4>Contacto</h4>
+              <p>Correo: contacto@ecofood.com</p>
+              <p>Teléfono: +57 300 000 0000</p>
+              <p>Bogotá, Colombia</p>
+            </div>
           </div>
-          <div>
-            <h4>Síguenos</h4>
-            <a href="#"><span class="footer-icon">📘</span>Facebook</a>
-            <a href="#"><span class="footer-icon">📷</span>Instagram</a>
-            <a href="#"><span class="footer-icon">🐦</span>Twitter</a>
-            <a href="#"><span class="footer-icon">🎵</span>TikTok</a>
-          </div>
-          <div>
-            <h4>Contáctanos</h4>
-            <p>Correo: contacto@ecofood.com</p>
-            <p>Tel: +57 300 000 0000</p>
-            <p>Ubicación: Bogotá, Colombia</p>
-          </div>
+          <p>© 2026 EcoFood. Alimentar también es cuidar.</p>
         </div>
-        <p>© 2026 EcoFood</p>
       </footer>
     </template>
+
     <template id="login-template">
-      <article class="auth-panel login-panel active" id="login-panel">
-        <h2>Iniciar sesi&oacute;n</h2>
+      <article class="auth-panel active" id="login-panel">
+        <h2>Iniciar sesión</h2>
         <form id="loginForm">
           <label>
-            Correo:
+            Correo
             <input id="login-email" type="email" placeholder="correo@ejemplo.com" required />
           </label>
           <label>
-            Contrase&ntilde;a:
+            Contraseña
             <input id="login-password" type="password" placeholder="********" required />
           </label>
           <button type="submit" class="solid" id="login-submit">Ingresar</button>
         </form>
-        <p id="loginMessage" class="auth-message"></p>
+        <p id="loginMessage" class="auth-message" aria-live="polite"></p>
         <p class="auth-toggle">
-          &iquest;No tienes cuenta?
+          ¿No tienes cuenta?
           <button type="button" data-auth-view="register-panel">Regístrate</button>
         </p>
       </article>
     </template>
+
     <template id="register-template">
       <article class="auth-panel" id="register-panel">
         <h2>Crear cuenta</h2>
         <form id="registerForm">
           <label>
-            Nombre:
+            Nombre
             <input id="register-name" type="text" placeholder="Nombre completo" required />
           </label>
           <label>
-            Correo:
+            Correo
             <input id="register-email" type="email" placeholder="correo@ejemplo.com" required />
           </label>
           <label>
-            Contrase&ntilde;a:
+            Contraseña
             <input id="register-password" type="password" placeholder="********" required />
           </label>
           <button id="register-submit" type="submit" class="solid">Registrarse</button>
         </form>
-        <p id="registerMessage" class="auth-message"></p>
+        <p id="registerMessage" class="auth-message" aria-live="polite"></p>
         <p class="auth-toggle">
-          &iquest;Ya tienes cuenta?
-          <button type="button" data-auth-view="login-panel">Inicia sesi&oacute;n</button>
+          ¿Ya tienes cuenta?
+          <button type="button" data-auth-view="login-panel">Inicia sesión</button>
         </p>
       </article>
     </template>
+
+    <template id="dashboard-template">
+      <section class="dashboard-page" id="dashboard-page">
+        <aside class="dashboard-sidebar">
+          <div class="dashboard-avatar">
+            <div class="dashboard-avatar__circle" id="dashboard-avatar">EF</div>
+            <p id="dashboard-role-label">Panel EcoFood</p>
+          </div>
+          <nav class="sidebar-nav" aria-label="Panel principal">
+            <a href="#" class="admin-nav" data-view="inicio">Inicio</a>
+            <a href="#" class="admin-nav" data-view="inventario">Inventario</a>
+            <a href="#" class="admin-nav" data-view="donantes">Donantes</a>
+            <a href="#" class="admin-nav" data-view="beneficiarios">Beneficiarios</a>
+            <a href="#" class="admin-nav" data-view="roles">Roles</a>
+            <a href="#" class="admin-nav" data-view="reportes">Reportes</a>
+            <div class="sidebar-divider beneficiary-nav"></div>
+            <span class="sidebar-label beneficiary-nav">Beneficiario</span>
+            <a href="#" class="beneficiary-nav" data-view="beneficiario-inicio">Inicio</a>
+            <a href="#" class="beneficiary-nav" data-view="beneficiario-ayudas">Mis ayudas</a>
+            <a href="#" class="beneficiary-nav" data-view="beneficiario-cuenta">Mi cuenta</a>
+          </nav>
+        </aside>
+        <div class="dashboard-body">
+          <header class="dashboard-header">
+            <div>
+              <p id="dashboard-welcome">Bienvenido a EcoFood</p>
+              <h3 id="dashboard-title">Panel de administración</h3>
+            </div>
+            <button type="button" class="solid" id="logout-dashboard">Cerrar sesión</button>
+          </header>
+
+          <div class="dashboard-panels">
+            <article class="dashboard-content active" data-view="inicio">
+              <div class="dashboard-grid">
+                <article>
+                  <strong>120</strong>
+                  <span>Donantes registrados</span>
+                </article>
+                <article>
+                  <strong>80</strong>
+                  <span>Beneficiarios activos</span>
+                </article>
+                <article>
+                  <strong>45</strong>
+                  <span>Entregas del mes</span>
+                </article>
+                <article>
+                  <strong>18</strong>
+                  <span>Aliados comunitarios</span>
+                </article>
+              </div>
+              <div class="dashboard-chart">
+                <p>Donativos por mes</p>
+                <div class="chart-bars">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </article>
+
+            <article class="dashboard-content" data-view="inventario">
+              <h4>Inventario</h4>
+              <div class="table-card">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Producto</th>
+                      <th>Cantidad</th>
+                      <th>Estado</th>
+                      <th>Fecha</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Arroz</td>
+                      <td>50 kg</td>
+                      <td class="status-ok">Disponible</td>
+                      <td>10/03/2026</td>
+                    </tr>
+                    <tr>
+                      <td>Lentejas</td>
+                      <td>30 kg</td>
+                      <td class="status-low">Bajo stock</td>
+                      <td>08/03/2026</td>
+                    </tr>
+                    <tr>
+                      <td>Aceite</td>
+                      <td>20 L</td>
+                      <td class="status-ok">Disponible</td>
+                      <td>05/03/2026</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="dashboard-actions">
+                  <button type="button" class="outline" data-action-message="Función lista para agregar productos nuevos.">Agregar producto</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="dashboard-content" data-view="donantes">
+              <h4>Donantes</h4>
+              <div class="table-card">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Correo</th>
+                      <th>Tipo</th>
+                      <th>Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>María Gómez</td>
+                      <td>maria@email.com</td>
+                      <td>Dinero</td>
+                      <td class="status-ok">Activo</td>
+                    </tr>
+                    <tr>
+                      <td>Juan Pérez</td>
+                      <td>juan@email.com</td>
+                      <td>Alimentos</td>
+                      <td class="status-ok">Activo</td>
+                    </tr>
+                    <tr>
+                      <td>Laura Pérez</td>
+                      <td>laura@email.com</td>
+                      <td>Mixto</td>
+                      <td class="status-low">Inactivo</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="dashboard-actions">
+                  <button type="button" class="solid" data-action-message="Vista de detalle preparada para integrar datos reales.">Ver detalle</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="dashboard-content" data-view="beneficiarios">
+              <h4>Beneficiarios</h4>
+              <div class="table-card">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Correo</th>
+                      <th>Tipo ayuda</th>
+                      <th>Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Pedro Martínez</td>
+                      <td>pedro@email.com</td>
+                      <td>Alimentos</td>
+                      <td class="status-ok">Activo</td>
+                    </tr>
+                    <tr>
+                      <td>Ana Torres</td>
+                      <td>ana@email.com</td>
+                      <td>Economía</td>
+                      <td class="status-pending">Pendiente</td>
+                    </tr>
+                    <tr>
+                      <td>Luis Ramírez</td>
+                      <td>luis@email.com</td>
+                      <td>Mixto</td>
+                      <td class="status-low">Inactivo</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="dashboard-actions">
+                  <button type="button" class="outline" data-action-message="Puedes conectar aquí la ficha completa del beneficiario.">Ver detalle</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="dashboard-content" data-view="roles">
+              <h4>Roles</h4>
+              <div class="table-card">
+                <p id="rolesMessage" class="roles-message" aria-live="polite"></p>
+                <div class="dashboard-actions">
+                  <button type="button" class="outline" id="rolesRefreshBtn">Actualizar lista</button>
+                </div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Usuario</th>
+                      <th>ID</th>
+                      <th>Rol</th>
+                      <th>Acción</th>
+                    </tr>
+                  </thead>
+                  <tbody id="rolesTableBody"></tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="dashboard-content" data-view="reportes">
+              <h4>Reportes</h4>
+              <div class="dashboard-grid">
+                <article>
+                  <strong>$2.000.000</strong>
+                  <span>Total donaciones</span>
+                </article>
+                <article>
+                  <strong>120</strong>
+                  <span>Total entregas</span>
+                </article>
+                <article>
+                  <strong>80</strong>
+                  <span>Beneficiarios activos</span>
+                </article>
+                <article>
+                  <strong>89%</strong>
+                  <span>Entregas completadas</span>
+                </article>
+              </div>
+              <div class="dashboard-chart">
+                <p>Distribución de ayudas</p>
+                <div class="chart-bars">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </article>
+
+            <article class="dashboard-content" data-view="beneficiario-inicio">
+              <h4>Bienvenido, beneficiario</h4>
+              <div class="dashboard-grid">
+                <article>
+                  <strong>Activo</strong>
+                  <span>Estado del beneficio</span>
+                </article>
+                <article>
+                  <strong>3</strong>
+                  <span>Ayudas recibidas</span>
+                </article>
+                <article>
+                  <strong class="dashboard-value dashboard-value--date">10/03/2026</strong>
+                  <span>Última entrega</span>
+                </article>
+                <article>
+                  <strong>2</strong>
+                  <span>Solicitudes en proceso</span>
+                </article>
+              </div>
+              <div class="dashboard-chart">
+                <p>Resumen de apoyos</p>
+                <div class="chart-bars">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </article>
+
+            <article class="dashboard-content" data-view="beneficiario-ayudas">
+              <h4>Mis ayudas</h4>
+              <div class="table-card">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Fecha</th>
+                      <th>Tipo de ayuda</th>
+                      <th>Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>10/03/2026</td>
+                      <td>Alimentos</td>
+                      <td class="status-ok">Entregada</td>
+                    </tr>
+                    <tr>
+                      <td>01/03/2026</td>
+                      <td>Economía</td>
+                      <td class="status-pending">Pendiente</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="dashboard-actions">
+                  <button type="button" class="outline" data-action-message="Historial listo para enlazar con tu base de datos.">Ver historial</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="dashboard-content" data-view="beneficiario-cuenta">
+              <h4>Mi cuenta</h4>
+              <div class="table-card">
+                <p><strong>Nombre:</strong> <span id="account-name">Sin datos</span></p>
+                <p><strong>Correo:</strong> <span id="account-email">Sin datos</span></p>
+                <p><strong>Tipo:</strong> <span id="account-role">Beneficiario</span></p>
+                <div class="dashboard-actions">
+                  <button type="button" class="solid" data-action-message="Edición de perfil disponible para integrar más adelante.">Editar perfil</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <p class="dashboard-note" id="dashboard-feedback" aria-live="polite"></p>
+        </div>
+      </section>
+    </template>
+
     <script src="js/app.js"></script>
   </body>
 </html>
